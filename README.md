@@ -42,9 +42,18 @@
 2. As a user, I want to change the position of the list on the board, So that I can I can customize the layout according to the workflow the project needs.
 3. As a user, I want to change the name of a list, So that it better reflects the current content or stage of the tasks within it.
 4. As a user, I want to be able to delete a list, So that I can remove stages that are no longer necessary for the projects organization.
-5. As a user, I want to be able to create a task, So that I can add new tasks to my project, ensuring the work can be tracked through completion.
+5. As a user, I want to be able to create a task (Informer), So that I can add new tasks to my project, ensuring the work can be tracked through completion.
 6. As a user, I want to add a tittle to the task, So that it can be identified, facilitating communication and organization among the team members.
 7. As a user, I want to assign a status for the task, So that team members can see the progress and current state of the task
 8. As a user, I want to be able to change the status of the task by moving it between different columns (states), So that I can visually track and update the progress of tasks as they advance through various states.
 9. As a user, I want to add a description to the new task using action text, So that I can provide detailed information and context about the task.
-10. As user, I want be able assign other team members to work on the new task, So that responsibilities are clear and tasks are distributed effectively through the team.
+10. As user, I want to be able assign other team members to work on the new task (Asignee), So that responsibilities are clear and tasks are distributed effectively through the team.
+11. As a user, I want assign priorities (High, Medium, Low) to each task, So that I can manage the urgency and importance of tasks efficiently.
+12. As a user, I want to be able to delete a task, So that I can remove items that are no longer needed or relevant to the project.
+13. As a user, I want to create a label, So that I can label tasks effectively, making it easier to identify them based on a specific characteristic.
+14. As a user, I want to add a tittle to the new label, So that it can be clearly identified and used across various tasks.
+15. As a user, I want to add a color to the new label, So that tasks can be visually categorized on the board.
+16. As a user, I want to assing a label to a task, So that I can easily identify task types, facilitating the workflow.
+17. As a user, I want to be able to change labels though tasks, So that I can update task categories as project requirements evolve.
+18. As a user, I want to be able to delete a label, So that I can remove unnecessary labels.
+
