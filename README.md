@@ -1,5 +1,5 @@
 # Course Project - Assignment #1
-##### Trello clone - Group 24
+#### Trello clone - Group 24
 
 ##  User Story
 #### New users - Create account/profile
@@ -56,4 +56,28 @@
 16. As a user, I want to assing a label to a task, So that I can easily identify task types, facilitating the workflow.
 17. As a user, I want to be able to change labels though tasks, So that I can update task categories as project requirements evolve.
 18. As a user, I want to be able to delete a label, So that I can remove unnecessary labels.
+19. As a user, I want to be able to write comments to the task, So that I can give feedback, explain details, or update team members on the tasks progress, facilitating communication throughout the task.
+20. As a user, I want to be able to edit my comments, So that I can correct errors or update information in my tasks comments.
+21. As a user, I want to be able to delete my comments, So that I can remove outdated or irrelevant comments in the task.
+22. As a user, I want to be able to view the activities on a certain task, So that I can track the history and progress of the task.
+23. As a user, I want to view wich team members have performed activities on the task, So that I can know who has contributed and might be able to provide insights to those team members.
+24. As a user, I want to view the date of the activities done by other members, So that I can track the timeline of contributions and responses of the task.
+25. As a user, I want to be able to add a checklist to a task, So that I can break down the task into smaller steps, to make sure all parts of the task are completed.
+26. As a user, I want to add a tittle to the checklist, So that I can easily identify its purpose.
+27. As a user, I want to be able to delete a checklist from task, So that I can remove it when its no longer needed.
+28. As a user, I want to be able add items to the checklist, So that I can specify all the steps required to complete the task.
+29. As a user, I want to be able to delete items from the checklist, So that I can keep the checklist up to date to the tasks current needs.
+30. As a user, I want to check off items on the checklist, So that I can visually track progress within the task and make sure that each step is completed.
+31. As a user, I want to be able to uncheck items on the checklist, So that I can correct mistakes.
+32. As a user, I want to be able to add a due date to a certain task, So that I can set a deadline to that task, helping to ensure the task is completed on time, and the project stays on schedule.
+33. As a user, I want to be able to add a starting date to a certain task, So that I can organize my workflow more effectively.
+34. As a user, I want to be able to add a due date remindar to the task, So that I receive alerts before the deadline, making sure to complete the task before the due date.
+35. As a user, I want to modify the due date of a task, So that I can adjust the timeline as project requirements or priorities change.
+36. As a user, I want to delete the due date of a task, So that I can remove unnecessary time constraints.
+37. As a user, I want to add custom attachments to tasks, So that I can attach additional information to the task, such as a link to a Pull Request associated with the task.
+38. As a user, I want to be able to add a text to display on the attachments, So that I can provide context or instructions related to the file, making it easier for other team members to understand it.
+39. As a user, I want to be able to comment on the attachment, So that I can discuss specifics about the file attached.
+40. As a user, I want to be able to download the attachment, So that I can access and review the file.
+41. As a user, I want to be able to remove the attachment, So that I can remove outdated or unnecessary files from the task.
+42. As a user, I want to be able to edit the attachmet, So that I can update the file directly within the task.
 
