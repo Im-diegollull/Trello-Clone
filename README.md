@@ -12,14 +12,14 @@
 7. As a new user, I want to create my username, So that I could be recognized by my name or nickname on the platform.
 8. As a new user, I want to be able to pick a profile picture, So that I can reflect my current or desired appearence.
 9. As a new user, I want to add a bio to my profile, So that I can share more about my personal and professional background with my coworkers.
-10. As a new user, I want set preferences like language and time zone, So that the application interface and time related features are personalized to my location and language.
+10. As a new user, I want to set preferences like language and time zone, So that the application interface and time related features are personalized to my location and language.
 
 #### Already existing users - Config User profile
 1. As a user, I want to log in to my account, So that I can access my personalized account on the platform.
-2. As a user, I wan to be able to change my password, So that I can update my security settings.
+2. As a user, I want to be able to change my password, So that I can update my security settings.
 3. As a user, I want to access my profile, So that I can review my personal account information.
-4. As a user, I want to be able to change my profile picture, So that I can reflect my current or desired appearence.
-5. As a user, I want to change my name, So that my profile accurately show my name or nickname, in case I made a mistake or wanted to change it.
+4. As a user, I want to be able to change my profile picture, So that I can reflect my current or desired appearance.
+5. As a user, I want to change my name, So that my profile accurately shows my name or nickname, in case I made a mistake or wanted to change it.
 6. As a user, I want to change or add a bio to my user profile, So that I can update my personal and professional background with my coworkers.
 7. As a user, I want to be able to log out of my account, So that I can ensure my account is secure when I'm not using it
 
@@ -33,7 +33,7 @@
 7. As a user, I want to be able to invite members to my workspace, So that we can collaborate on projects and manage tasks together.
 8. As a user, I want to be able to join other workspaces, So that I can collaborate on different projects and contribute to various teams.
 9. As a user, I want to be able to create a board (Board Informer), So that I can organize tasks and workflows specific to a project.
-10. As a user, I want to add a tittle to the new board, So that it can be easily identified and referenced by myself and team members.
+10. As a user, I want to add a title to the new board, So that it can be easily identified and referenced by myself and team members.
 11. As a user, I want to add the board to a specific workspace, So that it is organized within the correct team.
 12. As a user, I want to select a type of visibility: private, workspace or public, So that I can control who can see and interact with the board.
 13. As a user, I want to be able to edit existing boards, So that I can update the boards details to reflect changes in the project, team structure, or workflow requirements.
@@ -41,11 +41,11 @@
 
 #### Board 
 1. As a user, I want to add a list to my board, So that I can define states such as "To Do", "In Progress", and "Done" to organize and track the progress of tasks effectively.
-2. As a user, I want to change the position of the list on the board, So that I can I can customize the layout according to the workflow the project needs.
+2. As a user, I want to change the position of the list on the board, So that I can customize the layout according to the workflow the project needs.
 3. As a user, I want to change the name of a list, So that it better reflects the current content or stage of the tasks within it.
 4. As a user, I want to be able to delete a list, So that I can remove stages that are no longer necessary for the projects organization.
 5. As a user, I want to be able to create a task (Informer), So that I can add new tasks to my project, ensuring the work can be tracked through completion.
-6. As a user, I want to add a tittle to the task, So that it can be identified, facilitating communication and organization among the team members.
+6. As a user, I want to add a title to the task, So that it can be identified, facilitating communication and organization among the team members.
 7. As a user, I want to assign a status for the task, So that team members can see the progress and current state of the task
 8. As a user, I want to be able to change the status of the task by moving it between different columns (states), So that I can visually track and update the progress of tasks as they advance through various states.
 9. As a user, I want to add a description to the new task using action text, So that I can provide detailed information and context about the task.
@@ -55,8 +55,8 @@
 13. As a user, I want to create a label, So that I can label tasks effectively, making it easier to identify them based on a specific characteristic.
 14. As a user, I want to add a tittle to the new label, So that it can be clearly identified and used across various tasks.
 15. As a user, I want to add a color to the new label, So that tasks can be visually categorized on the board.
-16. As a user, I want to assing a label to a task, So that I can easily identify task types, facilitating the workflow.
-17. As a user, I want to be able to change labels though tasks, So that I can update task categories as project requirements evolve.
+16. As a user, I want to assign a label to a task, So that I can easily identify task types, facilitating the workflow.
+17. As a user, I want to be able to change labels through tasks, So that I can update task categories as project requirements evolve.
 18. As a user, I want to be able to delete a label, So that I can remove unnecessary labels.
 19. As a user, I want to be able to write comments to the task, So that I can give feedback, explain details, or update team members on the tasks progress, facilitating communication throughout the task.
 20. As a user, I want to be able to edit my comments, So that I can correct errors or update information in my tasks comments.
@@ -73,7 +73,7 @@
 31. As a user, I want to be able to uncheck items on the checklist, So that I can correct mistakes.
 32. As a user, I want to be able to add a due date to a certain task, So that I can set a deadline to that task, helping to ensure the task is completed on time, and the project stays on schedule.
 33. As a user, I want to be able to add a starting date to a certain task, So that I can organize my workflow more effectively.
-34. As a user, I want to be able to add a due date remindar to the task, So that I receive alerts before the deadline, making sure to complete the task before the due date.
+34. As a user, I want to be able to add a due date reminder to the task, So that I receive alerts before the deadline, making sure to complete the task before the due date.
 35. As a user, I want to modify the due date of a task, So that I can adjust the timeline as project requirements or priorities change.
 36. As a user, I want to delete the due date of a task, So that I can remove unnecessary time constraints.
 37. As a user, I want to add custom attachments to tasks, So that I can attach additional information to the task, such as a link to a Pull Request associated with the task.
