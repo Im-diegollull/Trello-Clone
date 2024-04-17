@@ -79,5 +79,5 @@
 39. As a user, I want to be able to comment on the attachment, So that I can discuss specifics about the file attached.
 40. As a user, I want to be able to download the attachment, So that I can access and review the file.
 41. As a user, I want to be able to remove the attachment, So that I can remove outdated or unnecessary files from the task.
-42. As a user, I want to be able to edit the attachmet, So that I can update the file directly within the task.
+42. As a user, I want to be able to edit the attachment, So that I can update the file directly within the task.
 
