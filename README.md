@@ -21,21 +21,23 @@
 4. As a user, I want to be able to change my profile picture, So that I can reflect my current or desired appearence.
 5. As a user, I want to change my name, So that my profile accurately show my name or nickname, in case I made a mistake or wanted to change it.
 6. As a user, I want to change or add a bio to my user profile, So that I can update my personal and professional background with my coworkers.
+7. As a user, I want to be able to log out of my account, So that I can ensure my account is secure when I'm not using it
 
 #### Getting started
 1. As a user, I want a menu page of the platform, So that I can quickly access updates, track my tasks, navigate through workspaces, access to recent projects and create new workspaces and boards.
-2. As a user, I want to create a workspace, So that I can organize my boards and collaborate with others on projects.
-3. As a user, I want to add a name to my new workspace, So that it can be easily identified from other workspaces.
-4. As a user, I want to define a type of workspace, So that it matches the type of collaboration, such as small business, operations, marketing, engineering, IT, or others.
-5. As a user, I want to be able to add a workspace description, So that other members can understand the workspace main activities.
-6. As a user, I want to be able to invite members to my workspace, So that we can collaborate on projects and manage tasks together.
-7. As a user, I want to be able to join other workspaces, So that I can collaborate on different projects and contribute to various teams.
-8. As a user, I want to be able to create a board (Board Informer), So that I can organize tasks and workflows specific to a project.
-9. As a user, I want to add a tittle to the new board, So that it can be easily identified and referenced by myself and team members.
-10. As a user, I want to add the board to a specific workspace, So that it is organized within the correct team.
-11. As a user, I want to select a type of visibility: private, workspace or public, So that I can control who can see and interact with the board.
-12. As a user, I want to be able to edit existing boards, So that I can update the boards details to reflect changes in the project, team structure, or workflow requirements.
-13. As a user, I want to be able to delete a board, So that I can remove projects that are no longer active or needed.
+2. As a user, I want to access a help center within the application, So that I can find answers to common questions.
+3. As a user, I want to create a workspace, So that I can organize my boards and collaborate with others on projects.
+4. As a user, I want to add a name to my new workspace, So that it can be easily identified from other workspaces.
+5. As a user, I want to define a type of workspace, So that it matches the type of collaboration, such as small business, operations, marketing, engineering, IT, or others.
+6. As a user, I want to be able to add a workspace description, So that other members can understand the workspace main activities.
+7. As a user, I want to be able to invite members to my workspace, So that we can collaborate on projects and manage tasks together.
+8. As a user, I want to be able to join other workspaces, So that I can collaborate on different projects and contribute to various teams.
+9. As a user, I want to be able to create a board (Board Informer), So that I can organize tasks and workflows specific to a project.
+10. As a user, I want to add a tittle to the new board, So that it can be easily identified and referenced by myself and team members.
+11. As a user, I want to add the board to a specific workspace, So that it is organized within the correct team.
+12. As a user, I want to select a type of visibility: private, workspace or public, So that I can control who can see and interact with the board.
+13. As a user, I want to be able to edit existing boards, So that I can update the boards details to reflect changes in the project, team structure, or workflow requirements.
+14. As a user, I want to be able to delete a board, So that I can remove projects that are no longer active or needed.
 
 #### Board 
 1. As a user, I want to add a list to my board, So that I can define states such as "To Do", "In Progress", and "Done" to organize and track the progress of tasks effectively.
@@ -60,7 +62,7 @@
 20. As a user, I want to be able to edit my comments, So that I can correct errors or update information in my tasks comments.
 21. As a user, I want to be able to delete my comments, So that I can remove outdated or irrelevant comments in the task.
 22. As a user, I want to be able to view the activities on a certain task, So that I can track the history and progress of the task.
-23. As a user, I want to view wich team members have performed activities on the task, So that I can know who has contributed and might be able to provide insights to those team members.
+23. As a user, I want to view which team members have performed activities on the task, So that I can know who has contributed and might be able to provide insights to those team members.
 24. As a user, I want to view the date of the activities done by other members, So that I can track the timeline of contributions and responses of the task.
 25. As a user, I want to be able to add a checklist to a task, So that I can break down the task into smaller steps, to make sure all parts of the task are completed.
 26. As a user, I want to add a tittle to the checklist, So that I can easily identify its purpose.
