@@ -1,0 +1,3 @@
+class UserBoard < ApplicationRecord
+
+end
