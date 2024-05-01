@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_30_202901) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_01_012708) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,10 +33,28 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_202901) do
   create_table "states", force: :cascade do |t|
     t.bigint "board_id", null: false
     t.string "status", default: "", null: false
-    t.integer "board_position", null: false
+    t.integer "board_position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_states_on_board_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "state_id", null: false
+    t.bigint "informer_id", null: false
+    t.bigint "assignee_id"
+    t.bigint "label_id"
+    t.string "title", default: "", null: false
+    t.text "description", default: "", null: false
+    t.integer "priority", default: 0, null: false
+    t.datetime "due_date"
+    t.datetime "published_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assignee_id"], name: "index_tasks_on_assignee_id"
+    t.index ["informer_id"], name: "index_tasks_on_informer_id"
+    t.index ["label_id"], name: "index_tasks_on_label_id"
+    t.index ["state_id"], name: "index_tasks_on_state_id"
   end
 
   create_table "user_boards", force: :cascade do |t|
@@ -58,6 +76,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_202901) do
 
   add_foreign_key "labels", "boards"
   add_foreign_key "states", "boards"
+  add_foreign_key "tasks", "labels"
+  add_foreign_key "tasks", "states"
+  add_foreign_key "tasks", "users", column: "assignee_id"
+  add_foreign_key "tasks", "users", column: "informer_id"
   add_foreign_key "user_boards", "boards"
   add_foreign_key "user_boards", "users"
 end
