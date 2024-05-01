@@ -1,1 +1,33 @@
-<h1>Trebol Home Page</h1>
+<h1>Your Boards</h1>
+<div class="row">
+    <div class="col">
+        <div class="scrolling-wrapper">
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Creator</th>
+                <th scope="col">Published At</th>
+                <th scope="col">View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @boards.each do |board| %>
+                <tr>
+                    <th scope="row"><%= board.id %></th>
+                    <td><%= board.name %></td>
+                    <td><%= board.creator.name %></td>
+                    <td><%= board.published_at.strftime("%d/%m/%Y") %></td>
+                    <td>
+                    <%= link_to board_path(board) do %>
+                        <i class="bi bi-eye"></i>
+                    <% end %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.space-button {
+    margin-left: 10px; 
+}
+
+.scrolling-wrapper {
+    max-height: 90vh; 
+    overflow-y: auto;
+}
+
+.card {
+    border: 1px solid black;
+}
+
+.custom-col {
+    min-height: 100vh;
+}
+
+.custom-navbar {
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    height: 80px;
+}
+
+
+
+  

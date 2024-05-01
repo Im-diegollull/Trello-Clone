@@ -1,0 +1,32 @@
+<h1>Trebol Home Page</h1>
+<div class="row">
+    <div class="col">
+        <div class="scrolling-wrapper">
+            <% @boards.each do |board| %>
+            <div class="card my-3"> 
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title mb-3"><%= board.name %></h5>
+                        <h6 class="card-subtitle mb-3"><%= board.published_at.strftime("%d/%m/%Y") %></h6>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-body-secondary text-start"><%= board.creator.name %></h6>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="card" style="width: 18rem;">
+    <% @boards.each do |board| %>
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title mb-3"><%= board.name %></h5>
+            <h6 class="card-subtitle mb-3"><%= board.published_at.strftime("%d/%m/%Y") %></h6>
+        </div>
+        <h6 class="card-subtitle mb-2 text-body-secondary"><%= board.creator.name %></h6>
+  </div>
+  <% end %>
+</div>
+-->
