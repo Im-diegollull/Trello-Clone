@@ -8,6 +8,9 @@ class BoardsController < ApplicationController
     end
 
     def show
-        @Board = Board.find_by(id: params[:id])
+        @board = Board.find_by(id: params[:id])
+        if @board
+            @states = @board.states.includes(:tasks)
+        end 
     end
 end

@@ -7,8 +7,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "boards#home"
-  get "/home", to: "boards#home"
-  get "/index", to: "boards#index"
-  get "/show", to: "boards#show"
-  resources :boards, only: [:index, :show]
+  resources :boards, only: [:index, :show, :home]
 end
