@@ -1,14 +1,18 @@
-<h1><%= @board.name %></h1>
-<div class="container text-center">
+<h1 class="show-text"><%= @board.name %></h1>
+<div class="container text-center mt-4">
   <div class="row align-items-start">
     <% @states.each do |state| %>
-      <div class="col">
-        <h2><%= state.status %></h2>
-        <% state.tasks.each do |task| %>
-          <div>
-            <h3><%= task.title %></h3>
-          </div>
-        <% end %>
+      <div class="col-12 col-md-3 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><%= state.status %></h5>
+                <% state.tasks.each do |task| %>
+                    <div class="task-box">
+                        <p><%= task.title %></></p>
+                    </div>
+                <% end %>
+            </div>
+        </div>
       </div>
     <% end %>
   </div>

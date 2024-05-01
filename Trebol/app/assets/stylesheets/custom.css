@@ -21,10 +21,13 @@
     height: 80px;
 }
 
-.state-box {
+.task-box {
     border: 1px solid black;
+    border-radius: 10px;  
+    padding: 5px;        
+    margin-bottom: 10px; 
 }
 
-
-
-  
+.show-text {
+    text-align: start;
+}
