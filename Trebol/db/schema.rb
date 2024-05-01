@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_01_012708) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_01_020642) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.bigint "task_id", null: false
+    t.string "file_link", default: "", null: false
+    t.string "comment", default: "", null: false
+    t.datetime "published_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_attachments_on_task_id"
+  end
 
   create_table "boards", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -74,6 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_01_012708) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "attachments", "tasks"
   add_foreign_key "labels", "boards"
   add_foreign_key "states", "boards"
   add_foreign_key "tasks", "labels"
