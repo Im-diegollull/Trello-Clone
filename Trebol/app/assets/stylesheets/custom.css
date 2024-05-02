@@ -137,6 +137,7 @@ body {
 
 .h1-text {
     margin-left: 20px;
+    margin-right: 20px;
     text-align: start;
     color: white;
     margin-bottom: 25px;
@@ -181,4 +182,9 @@ footer{
 
 .ftr-text {
     color: white;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
 }

@@ -1,4 +1,9 @@
-<h1 class="h1-text"><%= @board.name %></h1>
+<div class="header-container">
+    <h1 class="h1-text"><%= @board.name %></h1>
+    <%= link_to boards_path, class: "card-link icon-return" do %>
+        <i class="bi bi-arrow-return-left icon-color"></i>
+    <% end %>
+</div>
 <div class="container text-center mt-4">
     <div class="row align-items-start">
         <% @states.each do |state| %>
