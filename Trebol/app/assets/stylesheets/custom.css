@@ -172,3 +172,13 @@ h2 {
     margin-left: 20px;
     margin-right: 40px;
 }
+
+footer{
+    font-size: 14px;
+    color: white;
+    margin-top: 700px;
+}
+
+.ftr-text {
+    color: white;
+}
