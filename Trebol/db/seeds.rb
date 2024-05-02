@@ -54,6 +54,10 @@ brd3 = Board.create!(
     creator: usr3,
 )
 
+usr1.boards << brd1
+usr2.boards << brd2
+usr3.boards << brd3
+
 # State
 st1 = State.create!(
     board: brd1,
