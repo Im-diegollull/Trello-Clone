@@ -1,19 +1,20 @@
-<h1 class="show-text"><%= @board.name %></h1>
+<h1 class="h1-text"><%= @board.name %></h1>
 <div class="container text-center mt-4">
-  <div class="row align-items-start">
-    <% @states.each do |state| %>
-      <div class="col-12 col-md-3 mb-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title"><%= state.status %></h5>
+    <div class="row align-items-start">
+        <% @states.each do |state| %>
+            <div class="col-12 col-md-3 mb-4 custom-column">
+                <div class="state-header">
+                    <h5 class="show-text"><%= state.status %></h5>
+                    <i class="bi bi-plus-circle icon-color"></i>
+                </div>
                 <% state.tasks.each do |task| %>
-                    <div class="task-box">
-                        <p><%= task.title %></></p>
-                    </div>
+                <div class="task-box">
+                    <h3 class="task-title"><%= task.title %></h3>
+                    <p class="task-assig"> Asigned to <%= task.assignee.name %></></p>
+                    <p class="task-desc"><%= task.description %></></p>
+                </div>
                 <% end %>
             </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+        <% end %>
+    </div>
 </div>

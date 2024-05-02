@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
     def home
-        @boards = Board.all
+        @boards_recent = Board.order(published_at: :desc).limit(3)
     end
 
     def index

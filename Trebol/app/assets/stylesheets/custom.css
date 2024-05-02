@@ -1,33 +1,174 @@
-.space-button {
+body {
+    background-color: #18203c;
+}
+
+.custom-button {
     margin-left: 10px; 
+    background-color: #3adde5;
+    border: 2px solid #3adde5;
+    padding: 0.5rem 1rem;
+    font-size: 16px; 
+}
+
+.custom-button:hover, .custom-button:focus {
+    background-color: #293250; 
+    border-color: #3adde5;
 }
 
 .scrolling-wrapper {
-    max-height: 90vh; 
+    max-height: 40vh; 
     overflow-y: auto;
 }
 
 .card {
-    border: 1px solid black;
+    color: white;
+    border: 1px solid #18203c;
+    background-color: #293250;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .custom-col {
     min-height: 100vh;
+    background-color: #293250;
 }
 
 .custom-navbar {
     padding-top: 10px; 
     padding-bottom: 10px; 
     height: 80px;
+    background-color: #293250;
+    align-items: center; 
+    font-size: 16px; 
+}
+.custom-navbar .navbar-brand {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    padding-left: 20px;
+}
+
+.navbar-nav {
+    align-items: center;
+    padding-left: 20px;
+}
+
+.navbar-nav .nav-link {
+    margin-right: 20px; 
 }
 
 .task-box {
-    border: 1px solid black;
+    border: 2px solid #18203c;
     border-radius: 10px;  
-    padding: 5px;        
+    padding: 10px;        
     margin-bottom: 10px; 
+    background-color: #293250;
+    color: white
 }
 
 .show-text {
+    margin-left: 5px;
     text-align: start;
+    color: white;
+    margin-bottom: 35px;
+}
+
+.home-text {
+    margin-left: 20px;
+    text-align: start;
+    color: white;
+    margin-bottom: 35px;
+}
+
+.custom-table th, .custom-table td {
+    padding: 12px 12px;
+    background-color: #293250;
+    color: white;
+}
+
+.custom-column {
+    border-right: 1.5px solid white; 
+    padding: 15px; 
+}
+
+.task-title {
+    margin-bottom: 0px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 18px;
+}
+
+.task-assig {
+    margin-top: 0;
+    padding-bottom: 10px;
+    text-align: left;
+    color:rgb(189, 189, 189);
+    font-size: 16px;
+    border-bottom: 1px solid white; 
+}
+
+.task-desc {
+    font-size: 14px;
+    text-align: left;
+}
+
+.card-subtitle {
+    margin-top: 0;
+    color:rgb(189, 189, 189);
+    font-size: 16px;
+}
+
+.card-title {
+    text-align: left;
+    width: 250px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white; 
+}
+
+.slogan {
+    font-weight: bold;
+    margin-left: 20px;
+    text-align: start;
+    color: white;
+}
+
+.h1-text {
+    margin-left: 20px;
+    text-align: start;
+    color: white;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white; 
+}
+
+h2 {
+    text-align: start;
+    color: rgb(217, 211, 211);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white; 
+}
+
+.icon-color {
+    color: #3adde5;
+    font-size: 20px;
+}
+
+.state-header {
+    display: flex;
+    padding: 5px 10px; 
+    margin-bottom: 35px;
+}
+
+.state-header h5 {
+    margin: 0; 
+    flex-grow: 1;
+}
+
+.custom-table {
+    margin-left: 20px;
+    margin-right: 40px;
 }
