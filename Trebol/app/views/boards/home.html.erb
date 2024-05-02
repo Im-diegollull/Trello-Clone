@@ -13,7 +13,12 @@
                         <h5 class="card-title mb-3"><%= board.name %></h5>
                         <h6 class="card-subtitle mb-3"><%= board.published_at.strftime("%d/%m/%Y") %></h6>
                     </div>
-                    <h6 class="card-subtitle mb-2 text-start"> Created by <%= board.creator.name %></h6>
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-subtitle mb-2 text-start"> Created by <%= board.creator.name %></h6>
+                            <%= link_to board_path(board) do %>
+                                <i class="bi bi-eye icon-color"></i>
+                            <% end %>
+                       </div>     
                 </div>
             </div>
             <% end %>
