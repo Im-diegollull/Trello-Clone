@@ -8,6 +8,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,9 +18,18 @@
                     <td><%= user.name %></td>
                     <td><%= user.email %></td>
                     <td>
-                    <%= link_to user_path(user) do %>
-                        <i class="bi bi-eye icon-color"></i>
-                    <% end %>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="<%= user_path(user) %>">View</a></li>
+                            <li><a class="dropdown-item" href="<%= edit_user_path(user) %>">Edit</a></li>
+                            <li>
+                                <%= link_to 'Delete', user_path(user), data: { turbo_confirm: 'Are you sure?', turbo_method: "delete" }, class: "dropdown-item" %>
+                            </li>
+                        </ul>
+                    </div>
                     </td>
                 </tr>
                 <% end %>
