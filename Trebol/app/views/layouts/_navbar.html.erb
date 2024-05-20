@@ -4,10 +4,11 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active text-white" aria-current="page" href="<%= boards_path %>">Boards</a>
-        <button type="button" class="btn btn-primary custom-button"
-            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-            Create
-        </button>
+        <a class="btn btn-primary custom-button text-white" 
+           href="<%= new_board_path %>"
+           style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+           Create
+        </a>
       </div>
 
       <div class="ms-auto">

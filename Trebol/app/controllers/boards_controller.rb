@@ -13,4 +13,27 @@ class BoardsController < ApplicationController
             @states = @board.states.includes(:tasks)
         end 
     end
+
+    def new
+		@board = Board.new
+	end
+
+	def create  
+		@board = Board.new(board_params)
+		if @board.save
+			flash[:notice] = "board created successfully"
+			redirect_to boards_path
+		else
+			flash[:error] =  @board.errors.full_messages.to_sentence
+			redirect_to new_board_path
+		end
+	end
+
+
+    private
+
+
+    def board_params
+		params.require(:board).permit(:name, :creator_id)
+	end
 end
