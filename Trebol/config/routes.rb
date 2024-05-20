@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "boards#home"
   resources :boards, only: [:index, :show, :home]
+  resources :users
 end
