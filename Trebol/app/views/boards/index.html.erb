@@ -20,9 +20,18 @@
                     <td><%= board.creator.name %></td>
                     <td><%= board.published_at.strftime("%d/%m/%Y") %></td>
                     <td>
-                    <%= link_to board_path(board) do %>
-                        <i class="bi bi-eye icon-color"></i>
-                    <% end %>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="<%= board_path(board) %>">View</a></li>
+                            <li><a class="dropdown-item" href="<%= edit_board_path(board) %>">Edit</a></li>
+                            <li>
+                                <%= link_to 'Delete', board_path(board), data: { turbo_confirm: 'Are you sure?', turbo_method: "delete" }, class: "dropdown-item" %>
+                            </li>
+                        </ul>
+                    </div>
                     </td>
                 </tr>
                 <% end %>

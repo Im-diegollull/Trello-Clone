@@ -29,6 +29,31 @@ class BoardsController < ApplicationController
 		end
 	end
 
+    def edit
+		@board = Board.find(params[:id])
+	end
+
+	def update
+		@board = Board.find(params[:id])
+		if @board.update(board_params)
+			flash[:notice] = "board updated successfully"
+			redirect_to boards_path
+		else
+			flash[:error] = @board.errors.full_messages.to_sentence
+			redirect_to edit_board_path
+		end
+	end
+
+    def destroy
+        board = Board.find_by(id: params[:id])
+        if board.destroy
+			flash[:notice] = "board deleted successfully"
+		else
+			flash[:error] = @board.errors.full_messages.to_sentence
+		end
+		redirect_to boards_path
+    end
+
 
     private
 
