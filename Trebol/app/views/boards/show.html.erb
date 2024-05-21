@@ -34,6 +34,8 @@
                     <p class="task-desc"><%= task.description %></p>
                 </div>
                 <% end %>
+                <%= link_to 'New Task', new_board_state_task_path(@board, state), class: "btn btn-primary" %>
+
             </div>
         <% end %>
 

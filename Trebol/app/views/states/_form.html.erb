@@ -1,4 +1,4 @@
-<%= form_with model: state, local: true do |form| %>
+<%= form_with model: [state.board, state], local: true do |form| %>
     <div class="card white-font mt-4" style="width: auto;">
         <div class="card-body">
             <%= form.hidden_field :board_id, value: state.board_id %>

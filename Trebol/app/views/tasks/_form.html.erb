@@ -1,0 +1,31 @@
+<%= form_with model: [task.state.board, task.state, task], local: true do |form| %>
+<div class="card white-font mt-4" style="width: auto;">
+    <div class="card-body">
+        <%= form.hidden_field :state_id, value: task.state_id %>
+        <div class="d-flex justify-content-between align-items-center">
+            <%= form.text_field :title, placeholder: "Title", class: "form-control mb-4", required: true %>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <%= form.text_area :description, placeholder: "Description", class: "form-control mb-4", required: true %>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <%= form.number_field :priority, placeholder: "Priority", class: "form-control mb-4", required: true %>
+        </div>
+       <div class="form-group mb-3">
+            <%= form.date_field :due_date, {class: "form-control"} %>
+        </div>
+        <div class="form-group mb-3">
+            <%= form.collection_select :assignee_id, User.all, :id, :name, {prompt: "Select a Creator"}, {class: "form-control"} %>
+        </div>
+        <div class="form-group mb-3">
+            <%= form.collection_select :label_id, Label.all, :id, :name, {prompt: "Select a Creator"}, {class: "form-control"} %>
+        </div>
+        <div class="form-group mb-3">
+           <%= form.collection_select :informer_id, User.all, :id, :name, {prompt: "Select a Creator"}, {class: "form-control"} %>
+        </div>
+        <div class="actions">
+            <%= form.submit "Submit", class: "btn btn-primary rounded-pill px-4 mb-4" %>
+        </div>
+    </div>
+</div>
+<% end %>
