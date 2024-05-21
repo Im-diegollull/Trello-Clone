@@ -10,16 +10,24 @@
             <div class="col-12 col-md-3 mb-4 custom-column">
                 <div class="state-header">
                     <h5 class="show-text"><%= state.status %></h5>
+                    <button type="button" class="btn" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Add a Task">
                     <i class="bi bi-plus-circle icon-color"></i>
+                    </button>
                 </div>
                 <% state.tasks.each do |task| %>
                 <div class="task-box">
                     <h3 class="task-title"><%= task.title %></h3>
-                    <p class="task-assig"> Asigned to <%= task.assignee.name %></></p>
-                    <p class="task-desc"><%= task.description %></></p>
+                    <p class="task-assig"> Assigned to <%= task.assignee.name %></p>
+                    <p class="task-desc"><%= task.description %></p>
                 </div>
                 <% end %>
             </div>
         <% end %>
+
+        <div class="col-12 col-md-3 mb-4 custom-column">
+            <div class="state-header">
+                <%= link_to "Add State", new_board_state_path(@board), class: "btn btn-primary" %>
+            </div>
+        </div>
     </div>
 </div>
