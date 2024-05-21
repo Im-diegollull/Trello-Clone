@@ -11,8 +11,8 @@
                 <div class="state-header">
                     <h5 class="show-text"><%= state.status %></h5>
                     <div class="dropdown">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-three-dots"></i>
+                        <button class="btn text-white fs-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<%= edit_board_state_path(@board, state) %>">Edit</a></li>
@@ -28,12 +28,26 @@
                     -->
                 </div>
                 <% state.tasks.each do |task| %>
-                <div class="task-box">
-                    <h3 class="task-title"><%= task.title %></h3>
-                    <p class="task-assig"> Assigned to <%= task.assignee.name %></p>
-                    <p class="task-desc"><%= task.description %></p>
-                </div>
+                    <div class="task-box">
+                        <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="task-title mb-0"><%= task.title %></h3>
+                        <div class="dropdown">
+                            <button class="btn text-white fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="<%= edit_board_state_task_path(@board, state, task) %>">Edit</a></li>
+                            <li>
+                                <%= link_to 'Delete', board_state_task_path(@board, state, task), data: { turbo_confirm: 'Are you sure?', turbo_method: "delete" }, class: "dropdown-item" %>
+                            </li>
+                            </ul>
+                        </div>
+                        </div>
+                        <p class="task-assig">Assigned to <%= task.assignee.name %></p>
+                        <p class="task-desc"><%= task.description %></p>
+                    </div>
                 <% end %>
+
                 <%= link_to 'New Task', new_board_state_task_path(@board, state), class: "btn btn-primary" %>
 
             </div>
