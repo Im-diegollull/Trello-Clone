@@ -16,7 +16,9 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<%= edit_board_state_path(@board, state) %>">Edit</a></li>
-                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                            <li>
+                                <%= link_to 'Delete', board_state_path(@board, state), data: { turbo_confirm: 'Are you sure?', turbo_method: "delete" }, class: "dropdown-item" %>
+                            </li>
                         </ul>
                     </div>
                     <!--

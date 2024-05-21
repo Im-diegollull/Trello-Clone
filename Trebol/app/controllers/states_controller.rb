@@ -21,7 +21,7 @@ class StatesController < ApplicationController
     def update
         @state = State.find(params[:id])
         if @state.update(state_params)
-          flash[:notice] = "state updated successfully"
+          flash[:notice] = "State updated successfully"
           redirect_to board_path(@state.board)
         else
           flash[:error] = @state.errors.full_messages.to_sentence
@@ -29,6 +29,17 @@ class StatesController < ApplicationController
         end
     end
   
+    def destroy
+        state = State.find_by(id: params[:id])
+        if state.destroy
+            flash[:notice] = "State deleted successfully"
+        else
+            flash[:error] = @state.errors.full_messages.to_sentence
+        end
+        redirect_to  board_path(state.board)
+    end
+
+
     private
   
     def state_params
