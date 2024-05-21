@@ -10,9 +10,20 @@
             <div class="col-12 col-md-3 mb-4 custom-column">
                 <div class="state-header">
                     <h5 class="show-text"><%= state.status %></h5>
+                    <div class="dropdown">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="<%= edit_board_state_path(@board, state) %>">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                    <!--
                     <button type="button" class="btn" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Add a Task">
                     <i class="bi bi-plus-circle icon-color"></i>
                     </button>
+                    -->
                 </div>
                 <% state.tasks.each do |task| %>
                 <div class="task-box">

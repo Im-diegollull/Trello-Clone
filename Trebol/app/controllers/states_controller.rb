@@ -13,6 +13,21 @@ class StatesController < ApplicationController
         redirect_to new_sate_path
       end
     end
+
+    def edit
+        @state = State.find(params[:id])
+      end
+      
+    def update
+        @state = State.find(params[:id])
+        if @state.update(state_params)
+          flash[:notice] = "state updated successfully"
+          redirect_to board_path(@state.board)
+        else
+          flash[:error] = @state.errors.full_messages.to_sentence
+          redirect_to edit_state_path(@state)
+        end
+    end
   
     private
   
