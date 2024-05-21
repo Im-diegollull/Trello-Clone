@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :states do
       resources :tasks
     end 
+    resources :labels
   end 
   resources :users
 end

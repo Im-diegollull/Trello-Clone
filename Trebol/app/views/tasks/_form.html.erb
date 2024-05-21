@@ -18,7 +18,7 @@
             <%= form.collection_select :assignee_id, User.all, :id, :name, {prompt: "Select a Creator"}, {class: "form-control"} %>
         </div>
         <div class="form-group mb-3">
-            <%= form.collection_select :label_id, Label.all, :id, :name, {prompt: "Select a Creator"}, {class: "form-control"} %>
+            <%= form.collection_select :label_id, Label.all, :id, :title, {prompt: "Select a Creator"}, {class: "form-control"} %>
         </div>
         <div class="form-group mb-3">
            <%= form.collection_select :informer_id, User.all, :id, :name, {prompt: "Select a Creator"}, {class: "form-control"} %>
