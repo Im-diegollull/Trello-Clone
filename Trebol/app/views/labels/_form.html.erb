@@ -6,8 +6,9 @@
             <%= form.text_field :title, placeholder: "Title", class: "form-control mb-4", required: true %>
         </div>
         <div class="d-flex justify-content-between align-items-center">
-            <%= form.color_field :color, placeholder: "color", class: "form-control mb-4", required: true %>
-        </div>    
+            <%= form.label :color, "Select a Color", class: "form-label me-3" %>
+            <%= form.color_field :color, class: "form-control", required: true %>
+        </div>
         <div class="actions">
         <%= form.submit "Submit", class: "btn btn-primary rounded-pill px-4 mb-4" %>
     </div>

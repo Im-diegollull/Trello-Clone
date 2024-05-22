@@ -216,4 +216,8 @@ footer{
     flex: 0 0 auto;
     margin-right: 1rem;
 }
+
+.white-font {
+    color: white !important
+}
   

@@ -59,7 +59,11 @@
                             </ul>
                         </div>
                         </div>
-                        <p class="task-assig">Assigned to <%= task.assignee.name %></p>
+                        <% if task.assignee %>
+                            <p class="task-assig">Assigned to <%= task.assignee.name %></p>
+                        <% else %>
+                            <p class="task-assig">No assignee</p>
+                        <% end %>
                         <p class="task-desc"><%= task.description %></p>
                     </div>
                 <% end %>
