@@ -1,11 +1,21 @@
-<div class="header-container">
-    <div>
+<div class="header-container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
         <h1 class="h1-text"><%= @board.name %></h1>
         <%= link_to boards_path, class: "card-link icon-return" do %>
             <i class="bi bi-arrow-return-left icon-color"></i>
         <% end %>
     </div>
-    <%= link_to 'Create Label', new_board_label_path(@board), class: "btn btn-primary" %>
+    <div class="btn-group">
+        <%= link_to new_board_label_path(@board), class: "btn btn-primary d-flex align-items-center custom-button" do %>
+            <i class="bi bi-bookmark"></i>
+        <% end %>
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split custom-button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Dropdown menu links -->
+        </ul>
+    </div>
 </div>
 <div class="container text-center mt-4">
     <div class="board-container">
@@ -54,14 +64,18 @@
                     </div>
                 <% end %>
 
-                <%= link_to 'New Task', new_board_state_task_path(@board, state), class: "btn btn-primary" %>
+                <%= link_to new_board_state_task_path(@board, state), class: "btn btn-primary custom-button-2" do %>
+                    <i class="bi bi-plus-lg"></i> Add a card
+                <% end %>
 
             </div>
         <% end %>
 
         <div class="col-12 col-md-3 mb-4 custom-column">
             <div class="state-header">
-                <%= link_to "Add State", new_board_state_path(@board), class: "btn btn-primary" %>
+                <%= link_to new_board_state_path(@board), class: "btn btn-primary custom-button-2 fs-6" do %>
+                    <i class="bi bi-plus-lg"></i> Add a column
+                <% end %>
             </div>
         </div>
     </div>

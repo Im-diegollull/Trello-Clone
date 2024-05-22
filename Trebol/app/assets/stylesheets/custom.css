@@ -4,15 +4,29 @@ body {
 
 .custom-button {
     margin-left: 10px; 
-    background-color: #3adde5;
-    border: 2px solid #3adde5;
+    background-color: #3ab7e5;
+    border: 2px solid #3ab7e5;
     padding: 0.5rem 1rem;
     font-size: 16px; 
 }
 
 .custom-button:hover, .custom-button:focus {
     background-color: #293250; 
-    border-color: #3adde5;
+    border-color: #3ab7e5;
+}
+
+.custom-button-2 {
+    margin-top: 15px;
+    margin-left: 10px; 
+    background-color: #293250;
+    border: 2px solid #3ab7e5;
+    padding: 0.5rem 1rem;
+    font-size: 14px; 
+}
+
+.custom-button-2:hover, .custom-button-2:focus {
+    background-color: #3ab7e5; 
+    border-color: #3ab7e5;
 }
 
 .scrolling-wrapper {
