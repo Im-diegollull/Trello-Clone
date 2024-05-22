@@ -39,10 +39,11 @@ class UsersController < ApplicationController
 
     def destroy
         user = User.find_by(id: params[:id])
+		# user.assigned_tasks.update_all(user_id: nil)
         if user.destroy
 			flash[:notice] = "user deleted successfully"
 		else
-			flash[:error] = @user.errors.full_messages.to_sentence
+			flash[:error] = user.errors.full_messages.to_sentence
 		end
 		redirect_to users_path
     end
