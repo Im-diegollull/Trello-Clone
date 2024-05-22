@@ -9,8 +9,12 @@
             <%= form.label :color, "Select a Color", class: "form-label me-3" %>
             <%= form.color_field :color, class: "form-control", required: true %>
         </div>
-        <div class="actions">
-        <%= form.submit "Submit", class: "btn btn-primary rounded-pill px-4 mb-4" %>
+        <div class="actions d-flex justify-content-center align-items-center gap-2">
+            <%= form.submit "Submit", class: "btn btn-primary custom-button mb-4" %>
+            <%= link_to board_path(@label.board), class: "btn btn-primary custom-button mb-4" do %>
+                <i class="bi bi-arrow-90deg-left"></i>
+            <% end %>
+        </div>
     </div>
 </div>
 <% end %>

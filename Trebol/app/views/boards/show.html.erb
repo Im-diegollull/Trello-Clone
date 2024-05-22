@@ -12,14 +12,9 @@
         <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split custom-button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
         </button>
-        <!--
         <ul class="dropdown-menu">
-            <% @board.labels.each do |label| %>
-                <li><%= link_to 'Edit', edit_board_label_path(@board, label), class: "dropdown-item" %></li>
-            <% end %>
+            <li><a class="dropdown-item" href="<%= board_labels_path(@board) %>">All Labels</a></li>
         </ul>
-        -->
-
     </div>
 </div>
 <div class="container text-center mt-4">

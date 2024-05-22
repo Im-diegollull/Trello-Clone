@@ -6,8 +6,11 @@
             <div class="d-flex justify-content-between align-items-center">
                 <%= form.text_field :status, placeholder: "Status", class: "form-control mb-4", required: true %>
             </div> 
-            <div class="actions">
-                <%= form.submit "Submit", class: "btn btn-primary rounded-pill px-4 mb-4" %>
+            <div class="actions d-flex justify-content-center align-items-center gap-2">
+                <%= form.submit "Submit", class: "btn btn-primary custom-button mb-4" %>
+                <%= link_to board_path(state.board), class: "btn btn-primary custom-button mb-4" do %>
+                    <i class="bi bi-arrow-90deg-left"></i>
+                <% end %>
             </div>
         </div>
     </div>

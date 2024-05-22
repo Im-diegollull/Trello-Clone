@@ -21,8 +21,11 @@
         <div class="form-group mb-3">
             <%= form.collection_select :label_id, Label.all, :id, :title, {prompt: "Select a label"}, {class: "form-control"} %>
         </div>
-        <div class="actions">
-            <%= form.submit "Submit", class: "btn btn-primary rounded-pill px-4 mb-4" %>
+       <div class="actions d-flex justify-content-center align-items-center gap-2">
+            <%= form.submit "Submit", class: "btn btn-primary custom-button mb-4" %>
+            <%= link_to board_path(task.state.board), class: "btn btn-primary custom-button mb-4" do %>
+                <i class="bi bi-arrow-90deg-left"></i>
+            <% end %>
         </div>
     </div>
 </div>
