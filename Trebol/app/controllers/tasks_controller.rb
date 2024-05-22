@@ -1,4 +1,10 @@
 class TasksController < ApplicationController
+    def show
+      @task = Task.find_by(id: params[:id])
+      @state = @task.state
+      @board = @state.board
+    end
+
     def new
       @task = Task.new(state_id: params[:state_id])
     end

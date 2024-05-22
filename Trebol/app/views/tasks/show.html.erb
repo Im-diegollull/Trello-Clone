@@ -1,0 +1,7 @@
+<div class="task-details text-white">
+  <h1 class="task-title text-white"><%= @task.title %></h1>
+  <p class="task-priority text-white">Priority: <%= @task.priority %></p>
+  <p class="task-due-date text-white">Due Date: <%= @task.due_date %></p>
+  <%= link_to 'Edit Task', edit_board_state_task_path(@board, @state, @task), class: "btn btn-primary" %>
+  <%= link_to 'Back to Board', board_path(@board), class: "btn btn-secondary" %>
+</div>

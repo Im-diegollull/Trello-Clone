@@ -39,7 +39,6 @@ class UsersController < ApplicationController
 
     def destroy
         user = User.find_by(id: params[:id])
-		# user.assigned_tasks.update_all(user_id: nil)
         if user.destroy
 			flash[:notice] = "user deleted successfully"
 		else
