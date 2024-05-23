@@ -1,7 +1,9 @@
 <%= form_with model: [task.state.board, task.state, task], local: true do |form| %>
 <div class="card white-font mt-4" style="width: auto;">
     <div class="card-body">
-        <%= form.hidden_field :state_id, value: task.state_id %>
+         <div class="form-group mb-3">
+            <%= form.collection_select :state_id, State.where(board_id: task.state.board), :id, :status, {prompt: "Select a label"}, {class: "form-control"} %>
+        </div>
         <div class="form-group mb-3">
            <%= form.collection_select :informer_id, User.all, :id, :name, {prompt: "Select an Informer"}, {class: "form-control"} %>
         </div>
