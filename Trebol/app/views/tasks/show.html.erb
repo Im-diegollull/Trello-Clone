@@ -14,7 +14,13 @@
                 <% end %>
             </div>  
         </div>
-        <p class="text-start ms-3 text-secondary">Due Date: <%= @task.due_date.strftime("%B %d, %Y at %I:%M %p") %></p>
+
+        <% if @task.due_date %>
+            <p class="text-start ms-3 text-secondary">Due Date: <%= @task.due_date.strftime("%B %d, %Y at %I:%M %p") %></p>
+        <% else %>
+            <p class=" text-end me-3 text-secondary mt-0">No Due Date</p>
+        <% end %>
+
         <% if @task.label %>
             <p class="text-start ms-3 text-white">Label: <%= @task.label.title %></p>
         <% else %>
