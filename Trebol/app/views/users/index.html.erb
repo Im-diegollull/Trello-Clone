@@ -1,4 +1,11 @@
-<h1 class="h1-text">All Users</h1>
+<div class="header-container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <h1 class="h1-text">All Users</h1>
+        <%= link_to boards_path, class: "card-link icon-return" do %>
+            <i class="bi bi-arrow-return-left icon-color"></i>
+        <% end %>
+    </div>
+</div>
 <div class="row">
     <div class="col">
         <div class="scrolling-wrapper">
