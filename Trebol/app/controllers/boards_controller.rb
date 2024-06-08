@@ -25,6 +25,8 @@ class BoardsController < ApplicationController
 		@board = current_user.created_boards.build(board_params)
 		@board.creator = current_user
 		if @board.save
+			# Needed to add user to board through user board to manage teams 
+			add_user_to_board(@board, board_params[:user_id])
 			flash[:notice] = "Board created successfully"
 			redirect_to boards_path
 		else
@@ -37,7 +39,10 @@ class BoardsController < ApplicationController
 	end
 
 	def update
-		if @board.update(board_params)
+		# Needed to add user to board through user board to manage teams when updating a board
+		user_id = board_params[:user_id]
+		if @board.update(board_params.except(:user_id)) # This helped on some errors dunno
+			add_user_to_board(@board, user_id)
 			flash[:notice] = "Board updated successfully"
 			redirect_to boards_path
 		else
@@ -58,6 +63,15 @@ class BoardsController < ApplicationController
 
     private
 
+	# Needed to add user to board through user board to manage teams
+	# some how we need to add more user to the board, through the form, to create more teams
+	def add_user_to_board(board, user_id)
+		user = User.find_by(id: user_id)
+		if user && !board.users.include?(user)
+		  board.users << user
+		end
+	end  
+
 	def set_board
 		@board = Board.find_by(id: params[:id])
 		if !@board
@@ -66,6 +80,7 @@ class BoardsController < ApplicationController
 		end
 	end
 
+	# Manage the permits when logged 
 	def is_authorize_user
 		if @board.creator != current_user && !@board.users.include?(current_user)
 		  flash[:alert] = "You are not authorized to perform this action."
@@ -74,6 +89,6 @@ class BoardsController < ApplicationController
 	end
 
     def board_params
-		params.require(:board).permit(:name)
+		params.require(:board).permit(:name, :user_id) # some how manage to accepts more users
 	end
 end
