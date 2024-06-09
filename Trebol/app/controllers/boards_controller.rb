@@ -31,7 +31,7 @@ class BoardsController < ApplicationController
 			redirect_to boards_path
 		else
 			flash[:error] =  @board.errors.full_messages.to_sentence
-			redirect_to :new
+			render :new
 		end
 	end
 
@@ -47,7 +47,7 @@ class BoardsController < ApplicationController
 			redirect_to boards_path
 		else
 			flash[:error] = @board.errors.full_messages.to_sentence
-			redirect_to :edit
+			render :edit
 		end
 	end
 
