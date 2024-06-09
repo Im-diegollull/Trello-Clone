@@ -5,7 +5,7 @@
             <%= form.collection_select :state_id, State.where(board_id: task.state.board), :id, :status, {prompt: "Select a label"}, {class: "form-control"} %>
         </div>
         <div class="form-group mb-3">
-           <%= form.collection_select :informer_id, User.all, :id, :name, {prompt: "Select an Informer"}, {class: "form-control"} %>
+            <%= form.hidden_field :informer_id, value: current_user.id %>
         </div>
         <div class="d-flex justify-content-between align-items-center">
             <%= form.text_field :title, placeholder: "Title", class: "form-control mb-4", required: true %>
@@ -18,7 +18,7 @@
             <%= form.date_field :due_date, {class: "form-control"} %>
         </div>
         <div class="form-group mb-3">
-            <%= form.collection_select :assignee_id, User.all, :id, :name, {prompt: "Select an Assignee"}, {class: "form-control"} %>
+            <%= form.collection_select :assignee_id, @board.users, :id, :name, {prompt: "Select an Assignee"}, {class: "form-control"} %>
         </div>
         <div class="form-group mb-3">
             <%= form.collection_select :label_id, Label.where(board_id: task.state.board), :id, :title, {prompt: "Select a label"}, {class: "form-control"} %>

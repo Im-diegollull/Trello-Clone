@@ -2,10 +2,13 @@
 <div class="card white-font mt-4" style="width: auto;">
     <div class="card-body">
         <div class="form-group mb-3">
-            <%= form.collection_select :creator_id, User.all, :id, :name, {prompt: "Select a Creator"}, {class: "form-control"} %>
+            <%= form.hidden_field :creator_id, value: current_user.id %>
         </div>
-       <div class="form-group mb-3">
-        <%= form.label :user_ids, "Select your Team Members" %>
+        <div class="d-flex justify-content-between align-items-center">
+            <%= form.text_field :name, placeholder: "Board's Name", class: "form-control mb-4", required: true %>
+        </div>
+        <div class="form-group mb-3">
+        <%= form.label :user_ids, "Select your Team Members", class: "mb-2" %>
         <div class="checkbox-list">
             <%= form.collection_check_boxes :user_ids, User.all, :id, :name do |b| %>
             <div class="form-check">
@@ -14,9 +17,6 @@
             </div>
             <% end %>
         </div>
-        </div>
-        <div class="d-flex justify-content-between align-items-center">
-            <%= form.text_field :name, placeholder: "Board's Name", class: "form-control mb-4", required: true %>
         </div>
         <div class="actions d-flex justify-content-center align-items-center gap-2">
             <%= form.submit "Submit", class: "btn btn-primary custom-button mb-4" %>
