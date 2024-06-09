@@ -18,19 +18,19 @@ class BoardsController < ApplicationController
     end
 
     def new
-		@board = current_user.created_boards.build
+    	@board = current_user.created_boards.build
 	end
 
-	def create  
-		@board = current_user.created_boards.build(board_params)
+    def create
+		@board = current_user.created_boards.build(board_params.except(:user_ids))
 		@board.creator = current_user
 		if @board.save
-			# Needed to add user to board through user board to manage teams 
-			add_user_to_board(@board, board_params[:user_id])
+			user_ids = board_params[:user_ids].reject(&:blank?)
+			@board.users = User.where(id: user_ids)
 			flash[:notice] = "Board created successfully"
 			redirect_to boards_path
 		else
-			flash[:error] =  @board.errors.full_messages.to_sentence
+			flash[:error] = @board.errors.full_messages.to_sentence
 			render :new
 		end
 	end
@@ -39,20 +39,18 @@ class BoardsController < ApplicationController
 	end
 
 	def update
-		# Needed to add user to board through user board to manage teams when updating a board
-		user_id = board_params[:user_id]
-		if @board.update(board_params.except(:user_id)) # This helped on some errors dunno
-			add_user_to_board(@board, user_id)
+        if @board.update(board_params.except(:user_ids))
+			@board.users = User.where(id: board_params[:user_ids])
 			flash[:notice] = "Board updated successfully"
 			redirect_to boards_path
-		else
+	  	else
 			flash[:error] = @board.errors.full_messages.to_sentence
 			render :edit
-		end
+	  	end
 	end
 
-    def destroy
-        if @board.destroy
+	def destroy
+		if @board.destroy
 			flash[:notice] = "Board deleted successfully"
 		else
 			flash[:error] = @board.errors.full_messages.to_sentence
@@ -60,35 +58,24 @@ class BoardsController < ApplicationController
 		redirect_to boards_path
     end
 
-
     private
-
-	# Needed to add user to board through user board to manage teams
-	# some how we need to add more user to the board, through the form, to create more teams
-	def add_user_to_board(board, user_id)
-		user = User.find_by(id: user_id)
-		if user && !board.users.include?(user)
-		  board.users << user
-		end
-	end  
 
 	def set_board
 		@board = Board.find_by(id: params[:id])
 		if !@board
-		  flash[:error] = "Board not found."
-		  redirect_to boards_path
+			flash[:error] = "Board not found."
+			redirect_to boards_path
 		end
 	end
 
-	# Manage the permits when logged 
 	def is_authorize_user
 		if @board.creator != current_user && !@board.users.include?(current_user)
-		  flash[:error] = "Only team members can modify their Boards."
-		  redirect_to boards_path
-		end
+            flash[:error] = "Only team members can modify their Boards."
+			redirect_to boards_path
+    	end
 	end
 
     def board_params
-		params.require(:board).permit(:name, :user_id) # some how manage to accepts more users
+	  	params.require(:board).permit(:name, :creator_id, user_ids: [])
 	end
-end
+end  

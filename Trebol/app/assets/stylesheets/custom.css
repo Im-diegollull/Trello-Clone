@@ -229,3 +229,10 @@ footer{
     background-color: #293250;
     color: white
 }
+
+.checkbox-list {
+    height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
