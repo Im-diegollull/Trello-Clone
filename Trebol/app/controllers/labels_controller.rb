@@ -1,54 +1,79 @@
 class LabelsController < ApplicationController
+    before_action :authenticate_user!
+    before_action :set_board, only: [:index, :show, :new, :create]
+    before_action :set_label, only: [:show, :edit, :update, :destroy]
+    before_action :is_authorize_user, only: [:new, :create, :edit, :update, :destroy]
+
     def index
-      @board = Board.find(params[:board_id])
       @labels = @board.labels
     end
 
     def show
-      @label = Label.find(params[:id])
     end
 
     def new
-      @label = Label.new(board_id: params[:board_id])
+      @label = @board.labels.build
     end
 
     def create
-      @label = Label.new(label_params)
+      @label = @board.labels.build(label_params)
       if @label.save
         flash[:notice] = "Label created successfully"
-        redirect_to board_path(@label.board)
+        redirect_to board_path(@board)
       else
         flash[:error] = @label.errors.full_messages.to_sentence
-        redirect_to new_board_label_path(@label.board)
+        redirect_to :new
       end
     end
 
     def edit
-      @label = Label.find(params[:id])
     end
 
     def update
-      @label = Label.find(params[:id])
       if @label.update(label_params)
         flash[:notice] = "Label updated successfully"
-        redirect_to board_path(@label.board)
+        redirect_to board_path(@board)
       else
         flash[:error] = @label.errors.full_messages.to_sentence
-        redirect_to edit_board_label_path(@label.board, @label)
+        redirect_to :edit
       end
     end
 
     def destroy
-      label = Label.find_by(id: params[:id])
-      if label.destroy
+      if @label.destroy
         flash[:notice] = "Label deleted successfully"
       else
-        flash[:error] = label.errors.full_messages.to_sentence
+        flash[:error] = @label.errors.full_messages.to_sentence
       end
-      redirect_to board_path(label.board)
+      redirect_to board_path(@board)
     end
 
     private
+
+    def set_labels
+      @label = Label.find_by(id: params[:id])
+      if @label
+        @board = @label.board
+      else
+        flash[:alert] = "Label not found."
+        redirect_to boards_path 
+      end
+    end
+
+    def set_board
+      @board = Board.find_by(id: params[:board_id])
+      if !@board
+        flash[:alert] = "Board not found."
+        redirect_to boards_path
+      end
+    end
+
+    def is_authorize_user
+      if @board.creator != current_user && !@board.users.include?(current_user)
+        flash[:alert] = "You are not authorized to perform this action."
+        redirect_to boards_path
+      end
+    end
 
     def label_params
       params.require(:label).permit(:title, :color, :board_id)
