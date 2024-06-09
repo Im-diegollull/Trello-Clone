@@ -31,7 +31,7 @@ class BoardsController < ApplicationController
 			redirect_to boards_path
 		else
 			flash[:error] =  @board.errors.full_messages.to_sentence
-			redirect_to new_board_path
+			redirect_to :new
 		end
 	end
 
@@ -47,7 +47,7 @@ class BoardsController < ApplicationController
 			redirect_to boards_path
 		else
 			flash[:error] = @board.errors.full_messages.to_sentence
-			redirect_to edit_board_path
+			redirect_to :edit
 		end
 	end
 
@@ -75,7 +75,7 @@ class BoardsController < ApplicationController
 	def set_board
 		@board = Board.find_by(id: params[:id])
 		if !@board
-		  flash[:alert] = "Board not found."
+		  flash[:error] = "Board not found."
 		  redirect_to boards_path
 		end
 	end
@@ -83,7 +83,7 @@ class BoardsController < ApplicationController
 	# Manage the permits when logged 
 	def is_authorize_user
 		if @board.creator != current_user && !@board.users.include?(current_user)
-		  flash[:alert] = "You are not authorized to perform this action."
+		  flash[:error] = "Only team members can modify their Boards."
 		  redirect_to boards_path
 		end
 	end

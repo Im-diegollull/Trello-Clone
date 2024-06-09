@@ -48,7 +48,7 @@ class StatesController < ApplicationController
       if @state
         @board = @state.board
       else
-        flash[:alert] = "State not found."
+        flash[:error] = "State not found."
         redirect_to boards_path 
       end
     end
@@ -56,15 +56,15 @@ class StatesController < ApplicationController
     def set_board
       @board = Board.find_by(id: params[:board_id])
       if !@board
-        flash[:alert] = "Board not found."
+        flash[:error] = "Board not found."
         redirect_to boards_path
       end
     end
 
     def is_authorize_user
       if @board.creator != current_user && !@board.users.include?(current_user)
-        flash[:alert] = "You are not authorized to perform this action."
-        redirect_to boards_path
+        flash[:error] = "Only team members can modify their Boards."
+        redirect_to board_path(@board)
       end
     end
 

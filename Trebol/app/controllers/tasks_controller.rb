@@ -53,7 +53,7 @@ class TasksController < ApplicationController
       if @state
         @board = @state.board
       else
-        flash[:alert] = "State not found."
+        flash[:error] = "State not found."
         redirect_to boards_path
       end
     end
@@ -64,7 +64,7 @@ class TasksController < ApplicationController
         @state = @task.state
         @board = @state.board
       else
-        flash[:alert] = "Task not found."
+        flash[:error] = "Task not found."
         redirect_to boards_path
       end
     end
@@ -72,8 +72,8 @@ class TasksController < ApplicationController
     # Manage the permits when logged 
     def is_authorize_user
       if @board.creator != current_user && !@board.users.include?(current_user)
-        flash[:alert] = "You are not authorized to perform this action."
-        redirect_to boards_path
+        flash[:error] = "Only team members can modify their Boards."
+        redirect_to board_path(@board)
       end
     end
 
