@@ -12,9 +12,6 @@ Rails.application.routes.draw do
     resources :states do
       resources :tasks do 
         resources :attachments
-        member do
-          patch :update_column 
-        end
       end
     end 
     resources :labels

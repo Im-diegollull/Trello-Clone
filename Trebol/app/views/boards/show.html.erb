@@ -55,6 +55,15 @@
                                 </ul>
                             </div>
                         </div>
+
+                        <div class="select"> 
+                            <select class="form-select task-state-selector mb-3 text-white" style="background-color: #293250" data-task-id="<%= task.id %>">
+                                <% @board.states.each do |state| %>
+                                <option value="<%= state.id %>" <%= "selected" if task.state_id == state.id %>> <%= state.status %> </option>
+                                <% end %>
+                            </select> 
+                        </div>
+
                         <% if task.assignee %>
                             <p class="task-assig">Assigned to <%= task.assignee.name %></p>
                         <% else %>
@@ -65,15 +74,6 @@
                         <div class="attachments">
                             <i class="bi bi-paperclip"><%= task.attachments.count %></i>
                         </div>   
-                        
-                        <div class="task-state-selector mt-2">
-                            <label for="task_<%= task.id %>_state" class="form-label text-white"> Change Column:</label>
-                            <select id="task_<%= task.id %>_state" class="form-select task-state-selector" data-task-id="<%= task.id %>">
-                                <% @states.each do |state_option| %>
-                                <option value="<%= state_option.id %>" <%= "selected" if task.state_id == state_option.id %>> <%= state_option.status %></option>
-                                <% end %>
-                            </select>
-                        </div>  
 
                     </div>
                 <% end %>
@@ -96,29 +96,30 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.task-state-selector').forEach(function(selector) {
-      selector.addEventListener('change', function() {
-        var taskId = this.dataset.taskId;
-        var newStateId = this.value;
-        var boardId = document.body.dataset.boardId;
-        window.location.reload();
+    const taskStateSelectors = document.querySelectorAll(".task-state-selector");
 
-        fetch(`/boards/${boardId}/states/${newStateId}/tasks/${taskId}/update_column`, {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
-          },
-          body: JSON.stringify({ task: { state_id: newStateId } })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.status === 'success') {
+    taskStateSelectors.forEach(selector => {
+        selector.addEventListener("change", function(event) {
+            const taskId = event.target.dataset.taskId;
+            const newStateId = event.target.value;
+            const boardId = document.body.dataset.boardId;
             window.location.reload();
-          }
+
+            fetch(`/boards/${boardId}/states/${newStateId}/tasks/${taskId}`, {
+                method: 'PATCH',
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest",
+                    "Content-Type": "application/json",
+                    "X-CSRF-Token": "<%= form_authenticity_token %>"
+                },
+                body: JSON.stringify({ state_id: newStateId })
+            })
+            .then(response => response.json())
+            .then(data => {
+            if (data.status === 'success') {
+                window.location.reload();
+            }
+            }); 
         });
-      });
     });
-  });
 </script>

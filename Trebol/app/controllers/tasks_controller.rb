@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
     before_action :authenticate_user!
     before_action :set_state_board, only: [:new, :create]
-    before_action :set_task, only: [:show, :edit, :update, :destroy, :update_column]
-    before_action :is_authorize_user, only: [:new, :create, :edit, :update, :destroy, :update_column]
+    before_action :set_task, only: [:show, :edit, :update, :destroy]
+    before_action :is_authorize_user, only: [:new, :create, :edit, :update, :destroy]
 
 
     def show
@@ -30,11 +30,15 @@ class TasksController < ApplicationController
 
     def update
       if @task.update(task_params)
-        flash[:notice] = "Task updated successfully"
-        redirect_to board_path(@board)
+        respond_to do |format|
+          format.html { redirect_to board_path(@board), notice: 'Task updated successfully'}
+          format.json { render json: { status: 'success', task: @task } }
+        end
       else
-        flash[:error] = @task.errors.full_messages.to_sentence
-        render :edit
+        respond_to do |format|
+          format.html { render :edit, notice: @task.errors.full_messages}
+          format.json { render json: { status: 'error', errors: @task.errors.full_messages } }
+        end
       end
     end
 
@@ -45,18 +49,6 @@ class TasksController < ApplicationController
         flash[:error] = @task.errors.full_messages.to_sentence
       end
       redirect_to board_path(@board)
-    end
-
-    def update_column
-      if @task.update(task_params)
-        respond_to do |format|
-          format.json { render json: { status: 'success', task: @task } }
-        end
-      else
-        respond_to do |format|
-          format.json { render json: { status: 'error', errors: @task.errors.full_messages } }
-        end
-      end
     end
 
     private
