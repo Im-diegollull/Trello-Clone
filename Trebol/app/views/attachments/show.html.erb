@@ -1,9 +1,0 @@
-<h1>Attachment Details</h1>
-
-<p><strong>File Link:</strong> <%= @attachment.file_link %></p>
-<p><strong>Comment:</strong> <%= @attachment.comment %></p>
-<p><strong>Task:</strong> <%= link_to @attachment.task.title, board_state_task_path(@board, @state, @task) %></p>
-
-<%= link_to 'Edit', edit_attachment_path(@attachment), class: 'btn btn-primary' %>
-<%= link_to 'Back to Board', board_path(@board), class: 'btn btn-secondary' %>
-<%= link_to 'Delete', attachment_path(@attachment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>

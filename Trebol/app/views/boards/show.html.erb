@@ -63,14 +63,7 @@
                         <p class="task-desc"><%= task.description %></p>
 
                         <div class="attachments">
-                            <h6>Attachments:</h6>
-                            <% task.attachments.each do |attachment| %>
-                                <p class="attachment">
-                                    <%= link_to attachment.file_link, attachment.file_link, target: "_blank" %> - <%= attachment.comment %>
-                                </p>
-                            <% end %>
-                            <!-- Botón para añadir un nuevo attachment -->
-                            <%= link_to 'Add Attachment', new_board_state_task_attachment_path(@board, state, task), class: 'btn btn-sm btn-primary' %>
+                            <i class="bi bi-paperclip"><%= task.attachments.count %></i>
                         </div>                      
                     </div>
                 <% end %>
