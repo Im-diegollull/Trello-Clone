@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   root "boards#home"
   resources :boards do
     resources :states do
-      resources :tasks
+      resources :tasks do 
+        resources :attachments
+      end
     end 
     resources :labels
   end 

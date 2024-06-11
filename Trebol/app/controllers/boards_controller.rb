@@ -13,7 +13,7 @@ class BoardsController < ApplicationController
 
     def show
         if @board
-            @states = @board.states.includes(:tasks)
+            @states = @board.states.includes(tasks: :attachments)
         end 
     end
 
