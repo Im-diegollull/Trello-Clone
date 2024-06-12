@@ -32,9 +32,10 @@
         <div class="attachments mt-4">
         
         <div class="text-left-align d-flex">
-            <p class="text-start ms-3 text-white fs-3 mt-3 me-2">Attachments </p>
+            <i class="bi bi-paperclip fs-2 mt-2 ms-2"></i>
+            <p class="text-start text-white fs-3 mt-3 me-2">Attachments </p>
             <%= link_to new_board_state_task_attachment_path(@board, @state, @task), class: "mt-3" do %>
-                <i class="bi bi-plus-circle fs-3"></i>
+                <i class="bi bi-plus-circle fs-3" style="color: #3ab7e5;"></i>
             <% end %>
         </div>
         <% if @task.attachments.any? %>
@@ -59,7 +60,7 @@
 
             <% end %>
         <% else %>
-            <p>No attachments yet.</p>
+            <p>No attachments yet</p>
         <% end %>
         </div>
         <%= link_to 'Edit', edit_board_state_task_path(@board, @state, @task), class: "btn btn-primary custom-button mt-2 mb-4" %>
