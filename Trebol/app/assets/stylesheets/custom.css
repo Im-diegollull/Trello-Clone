@@ -249,3 +249,6 @@ footer{
     border: 1px solid #ccc;
     padding: 10px;
 }
+#error_explanation {
+    color: white; 
+}

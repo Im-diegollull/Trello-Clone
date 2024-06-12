@@ -7,6 +7,13 @@ class Task < ApplicationRecord
 
     validate :set_published_at
 
+    #Assignment 3 corrections:
+    validates :informer, presence: { message: "must be present"}
+    validates :assignee, presence: { message: "must be present"}
+    validates :title, presence: { message: "must be present"}
+    validates :priority, presence: { message: "must be present"}
+    validates :due_date, presence: { message: "must be present"}
+    
     private
     
     def set_published_at
