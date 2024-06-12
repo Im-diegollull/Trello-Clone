@@ -28,7 +28,7 @@ class BoardsController < ApplicationController
 			user_ids = board_params[:user_ids].reject(&:blank?)
 			@board.users = User.where(id: user_ids)
 			flash[:notice] = "Board created successfully"
-			redirect_to boards_path
+			redirect_to board_path(@board)
 		else
 			flash[:error] = @board.errors.full_messages.to_sentence
 			render :new
