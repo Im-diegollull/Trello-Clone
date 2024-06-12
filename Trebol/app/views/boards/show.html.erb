@@ -103,7 +103,6 @@
             const taskId = event.target.dataset.taskId;
             const newStateId = event.target.value;
             const boardId = document.body.dataset.boardId;
-            window.location.reload();
 
             fetch(`/boards/${boardId}/states/${newStateId}/tasks/${taskId}`, {
                 method: 'PATCH',
@@ -114,11 +113,12 @@
                 },
                 body: JSON.stringify({ state_id: newStateId })
             })
-            .then(response => response.json())
-            .then(data => {
-            if (data.status === 'success') {
-                window.location.reload();
-            }
+            .then(response => {
+                if (response.ok) {
+                } else {
+                    window.location.reload();
+                }
+            window.location.reload();
             }); 
         });
     });

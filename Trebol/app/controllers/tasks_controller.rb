@@ -32,12 +32,12 @@ class TasksController < ApplicationController
       if @task.update(task_params)
         respond_to do |format|
           format.html { redirect_to board_path(@board), notice: 'Task updated successfully'}
-          format.json { render json: { status: 'success', task: @task } }
+          format.json { render json: @task, status: :ok}
         end
       else
         respond_to do |format|
           format.html { render :edit, notice: @task.errors.full_messages}
-          format.json { render json: { status: 'error', errors: @task.errors.full_messages } }
+          format.json { render json: @task.errors.full_messages, status: :unprocessable_entinty}
         end
       end
     end
