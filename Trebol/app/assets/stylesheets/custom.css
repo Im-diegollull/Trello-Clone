@@ -29,6 +29,19 @@ body {
     border-color: #3ab7e5;
 }
 
+.custom-button-3 {
+    margin-left: 10px; 
+    background-color: #293250;
+    border: 2px solid #3ab7e5;
+    padding: 0.5rem 1rem;
+    font-size: 16px; 
+}
+
+.custom-button-3:hover, .custom-button-3:focus {
+    background-color: #3ab7e5; 
+    border-color: #3ab7e5;
+}
+
 .scrolling-wrapper {
     max-height: 40vh; 
     overflow-y: auto;
