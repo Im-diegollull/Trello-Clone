@@ -16,7 +16,7 @@ class AttachmentsController < ApplicationController
   
       if @attachment.save
         flash[:notice] = "Attachment created successfully"
-        redirect_to board_path(@board)
+        redirect_to  board_state_task_path(@board, @state, @task)
       else
         flash[:error] = @attachment.errors.full_messages.to_sentence
         render :new
@@ -29,7 +29,7 @@ class AttachmentsController < ApplicationController
     def update
       if @attachment.update(attachment_params)
         flash[:notice] = "Attachment updated successfully"
-        redirect_to board_path(@board)
+        redirect_to board_state_task_path(@board, @state, @task)
       else
         flash[:error] = @attachment.errors.full_messages.to_sentence
         render :edit
@@ -42,7 +42,7 @@ class AttachmentsController < ApplicationController
       else
         flash[:error] = @attachment.errors.full_messages.to_sentence
       end
-      redirect_to board_path(@board)
+      redirect_to board_state_task_path(@board, @state, @task)
     end
   
     private
