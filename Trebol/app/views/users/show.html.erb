@@ -1,9 +1,52 @@
-<div class="header-container">
-    <i class="bi bi-person-circle icon-color fs-1 ms-3"></i>
-    <h1 class="h1-text"><%= @user.name %></h1>
-    <%= link_to boards_path, class: "card-link icon-return" do %>
-        <i class="bi bi-arrow-return-left icon-color"></i>
+<div class="container mt-5">
+  
+  <div class="header-container d-flex align-items-center mb-4">
+    <i class="bi bi-person-circle icon-color fs-1 me-3"></i>
+    <h1 class="mt-3 text-white h1-text"><%= @user.name %>'s Profile</h1>
+    <%= link_to edit_user_registration_path, class: "btn btn-outline-light ms-2 custom-button" do %>
+        <i class="bi bi-pencil"></i> Edit Profile
     <% end %>
+    <%= link_to boards_path, class: "card-link icon-return ms-auto" do %>
+      <i class="bi bi-arrow-return-left icon-color fs-2"></i>
+    <% end %>
+  </div>
+  <p class="text-secondary text-start fst-italic ms-3 fs-5"><%= @user.email %></p>
+
+  <h2 class="text-start mt-5">Boards Created by You</h2>
+  <div class="scrolling-wrapper-2">
+    <% @created_boards.each do |board| %>
+      <div class="card my-3 text-white">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="card-title mb-3"><%= board.name %></h5>
+            <h6 class="card-subtitle mb-3"><%= board.published_at.strftime("%d/%m/%Y") %></h6>
+          </div>
+          <div class="d-flex justify-content-between">
+            <%= link_to board_path(board), class: "card-link icon-color" do %>
+              <i class="bi bi-eye fs-4"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <h2 class="text-start mt-5">Boards from your Teams</h2>
+  <div class="scrolling-wrapper-2">
+    <% @team_boards.each do |board| %>
+      <div class="card my-3 text-white">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="card-title mb-3"><%= board.name %></h5>
+            <h6 class="card-subtitle mb-3"><%= board.published_at.strftime("%d/%m/%Y") %></h6>
+          </div>
+          <div class="d-flex justify-content-between">
+            <%= link_to board_path(board), class: "card-link icon-color" do %>
+              <i class="bi bi-eye fs-4"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-<p class="text-secondary text-start ms-5 fs-4"><%= @user.email %></p>
-    

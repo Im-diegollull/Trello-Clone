@@ -12,7 +12,7 @@ class Task < ApplicationRecord
     validates :assignee, presence: { message: "must be present"}
     validates :title, presence: { message: "must be present"}
     validates :priority, presence: { message: "must be present"}
-    validates :due_date, presence: { message: "must be present"}
+    #validates :due_date, presence: { message: "must be present"}
     
     private
     

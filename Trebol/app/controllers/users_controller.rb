@@ -62,6 +62,7 @@ class UsersController < ApplicationController
   
     def show
       @user = current_user
+      @team_boards = @user.boards
+      @created_boards = @user.created_boards
     end
-
 end
